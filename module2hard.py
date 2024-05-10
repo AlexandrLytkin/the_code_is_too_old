@@ -2,16 +2,11 @@ from random import randint
 
 
 def trap(n):
-    cont = []
     unique = ''
     for i in range(1, n):
-        for j in range(1, n):
-            if i + j == n and i != j:
-                if [j, i] in cont:
-                    continue
-                cont.append([i, j])
+        for j in range(i + 1, n + 1):
+            if n % (i + j) == 0:
                 unique += str(i) + str(j)
-
     return f'{n} - {unique}\nПоздравляю вас не раздавят, сокровище на верхней полке'
 
 
